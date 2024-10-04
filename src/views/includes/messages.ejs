@@ -1,0 +1,26 @@
+<% if (errors.length > 0) { %>  <%# um array vazio não é false value no JS, então se tiver mais de 0 eros, ele  mostra as mensagens de erro!! %>
+    <div class="row">
+      <div class="col my-3">
+        <div class="alert alert-danger">
+          <% errors.forEach(erro => { %>
+          <%= erro %><br>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    
+    <% if (success.length > 0) { %> <%# aqui adaptou-se a success, quando o usuário é criado com sucesso! %>
+    <div class="row">
+      <div class="col my-3">
+        <div class="alert alert-success">
+          <% success.forEach(success => { %>
+          <%= success %><br>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+
+    <%# errors não existia no começo, seria criado. usa-se forEach (estudar) os errors são conectados ao arquivo middlewares! %>
